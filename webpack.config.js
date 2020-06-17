@@ -52,7 +52,6 @@ var example = Object.assign({}, config,{
     ]
 });
 
-// Return Array of Configurations
 module.exports = [
     lib, example,       
 ];
