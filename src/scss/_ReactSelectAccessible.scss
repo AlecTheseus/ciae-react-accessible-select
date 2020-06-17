@@ -1,0 +1,91 @@
+/*stylelint-disable*/
+.react-accessible-select {
+  .ras-main {
+    width: auto;
+    position: relative;
+  }
+
+  .ras-label-hide {
+    width: 0;
+    height: 0;
+    display: block;
+    overflow: hidden;
+  }
+
+  .ras-button {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    line-height: 34px;
+    padding: 0 20px 0 10px;
+    background-color: white;
+    border: 1px solid grey;
+  }
+
+  .ras-placeholder {
+    color: #aaa;
+  }
+
+  .ras-ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    z-index: 1;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top-color: #e6e6e6;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  }
+
+  .ras-li {
+    cursor: pointer;
+    padding: 8px 10px;
+    list-style: none;
+  }
+
+  .ras-li[disabled] {
+    cursor: not-allowed;
+    color: grey;
+  }
+
+  &.ras-active {
+    .ras-ul {
+      display: block;
+    }
+  }
+
+  .ras-focused {
+    color: red;
+  }
+
+  .ras-selected {
+    background-color: antiquewhite;
+  }
+
+  .ras-arrow {
+    position: absolute;
+    top: 11px;
+    right: 6px;
+    display: block;
+    border-width: 0;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    transform: rotate(-45deg);
+    width: 8px;
+    height: 8px;
+    background: transparent;
+  }
+
+  &.ras-active {
+    .ras-arrow {
+      transform: rotate(135deg);
+    }
+  }
+}
