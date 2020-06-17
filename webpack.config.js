@@ -1,20 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-module.exports = {
-    // entry: './src/index.js',
-    entry: {
-        main: ['./src/index.js'],
-        app: ['./examples/app.js'],
-    },
-    output: {
-        library: 'UserList',
-        libraryTarget: 'umd',
-        libraryExport: 'default',
-        path: path.resolve(__dirname, 'dist'),
-        // filename: 'index.js'
-        filename: '[name].js',
-    },
+
+var config = {
     module: {
         rules: [
             {
@@ -32,15 +20,39 @@ module.exports = {
             }
         ]
     },
+};
+
+var lib = Object.assign({}, config, {
+    entry: './src/index.js',
+	output: {
+        library: 'UserList',
+        libraryTarget: 'umd',
+        libraryExport: 'default',
+        path: path.resolve(__dirname, 'lib'),
+        filename: 'index.js',
+    },
+});
+var example = Object.assign({}, config,{
+    entry: {
+        main: ['./src/index.js'],
+        app: ['./examples/app.js'],
+    },
+	output: {
+        library: 'UserList',
+        libraryTarget: 'umd',
+        libraryExport: 'default',
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js',
+    },
     plugins: [
         new HTMLWebpackPlugin({
             filename: 'basic.html',
             template: path.resolve(__dirname, 'examples/index.html')
         }),
-        // new HTMLWebpackPlugin({
-        //     filename: 'link.html',
-        //     template: path.resolve(__dirname, 'examples/link/index.html')
-        // }),
-        new webpack.HotModuleReplacementPlugin(),
     ]
-};
+});
+
+// Return Array of Configurations
+module.exports = [
+    lib, example,       
+];

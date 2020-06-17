@@ -2,7 +2,7 @@
   "name": "ciae-react-accessible-select",
   "version": "1.0.0",
   "description": "An accessible and customizable react selector",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "webpack"
   },
@@ -40,6 +40,5 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:AlecTheseus/ciae-react-accessible-select.git"
-  },
-  "readme": "README.md"
+  }
 }
